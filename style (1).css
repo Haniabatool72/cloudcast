@@ -1,0 +1,36 @@
+:root { --bg1:#1d3557; --bg2:#457b9d; --ink:#f1faee; --soft:rgba(241,250,238,.7); --panel:rgba(255,255,255,.12); --err:#ffd6d6; }
+body.clear { --bg1:#0b5d8f; --bg2:#f2b84b; }
+body.cloud { --bg1:#3d4a5c; --bg2:#8d9db0; }
+body.rain  { --bg1:#14213d; --bg2:#4a6fa5; }
+body.snow  { --bg1:#4b6a88; --bg2:#d6e4f0; }
+body.storm { --bg1:#1b1530; --bg2:#5a4a8a; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; font-family:"Bricolage Grotesque",system-ui,sans-serif; color:var(--ink);
+       background:linear-gradient(160deg,var(--bg1),var(--bg2)); background-attachment:fixed; transition:background .6s; }
+main { max-width:560px; margin:0 auto; padding:32px 20px 48px; }
+form { display:flex; gap:8px; }
+input { flex:1; min-width:0; padding:14px 16px; font:inherit; font-size:1.05rem; color:var(--ink); background:var(--panel);
+        border:1.5px solid transparent; border-radius:12px; outline:none; }
+input::placeholder { color:var(--soft); }
+input:focus-visible { border-color:var(--ink); }
+button { padding:14px 20px; font:inherit; font-weight:700; color:var(--bg1); background:var(--ink); border:0; border-radius:12px; cursor:pointer; }
+button:disabled { opacity:.6; cursor:wait; }
+button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+#status { margin-top:28px; }
+.msg { padding:16px; border-radius:12px; background:var(--panel); }
+.msg.error { color:var(--err); border:1.5px solid var(--err); }
+.spin { display:inline-block; width:16px; height:16px; margin-right:10px; vertical-align:-3px; border:2.5px solid var(--soft); border-top-color:transparent; border-radius:50%; animation:s .8s linear infinite; }
+@keyframes s { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce) { .spin { animation-duration:2s; } body { transition:none; } }
+.place { margin:0; font-size:1.3rem; font-weight:500; }
+.temp { margin:4px 0 0; font-size:clamp(5rem,26vw,8.5rem); font-weight:300; line-height:1; letter-spacing:-.04em; }
+.cond { margin:8px 0 0; font-size:1.4rem; font-weight:500; }
+.icon { font-size:1.2em; margin-right:6px; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:28px 0 20px; }
+.stat { padding:14px 12px; background:var(--panel); border-radius:12px; }
+.stat b { display:block; font-size:1.2rem; }
+.stat span { font-size:.85rem; color:var(--soft); }
+.days { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; }
+.day { padding:12px 4px; text-align:center; background:var(--panel); border-radius:12px; font-size:.9rem; }
+.day div:first-child { color:var(--soft); }
+.day .ic { font-size:1.5rem; margin:4px 0; }

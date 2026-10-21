@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <form id="form">
+    <input id="city" type="text" placeholder="Search a city, e.g. Lahore" autocomplete="off" aria-label="City name" autofocus>
+    <button id="btn" type="submit">Search</button>
+  </form>
+  <div id="status" aria-live="polite"><div class="msg">Enter a city name to see its current weather.</div></div>
+</main>
+
+<script src="api.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
